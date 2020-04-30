@@ -1,4 +1,4 @@
-let count=0;
+let count=0; //count of decimal points
 class Main extends React.Component {
   constructor(props){
     super(props);
@@ -18,7 +18,29 @@ class Main extends React.Component {
     this.op2=this.op2.bind(this)    //this is a function dedicated to the decimal point
   }
   add(e){
-    if(this.state.operation[this.state.operation.length-1]=='+'|| this.state.operation[this.state.operation.length-1]=='*'||this.state.operation[this.state.operation.length-1]=='/'||this.state.operation[this.state.operation.length-1]=='-'){
+    if(e.target.className=='-'){
+      if(this.state.operation[this.state.operation.length-1]=='-'){
+        this.setState({
+          operation:this.state.backend.slice(0,-1).concat(e.target.className),
+          backend:this.state.backend.slice(0,-1).concat(e.target.className),          
+          mid:this.state.mid.slice(0,-1).concat(e.target.className),
+          backans:e.target.className,
+          answer:e.target.className
+      })
+      }
+      else{
+        this.setState({
+          operation:this.state.backend.concat(e.target.className),
+          backend:this.state.backend.concat(e.target.className),
+          mid:this.state.mid.concat(e.target.className),
+          backans:e.target.className,
+          answer:e.target.className
+           })
+      }
+      count=0;
+    }
+    else{
+      if(this.state.operation[this.state.operation.length-1]=='+'|| this.state.operation[this.state.operation.length-1]=='*'||this.state.operation[this.state.operation.length-1]=='/'||this.state.operation[this.state.operation.length-1]=='-'){
       this.setState({
       operation:this.state.operation.concat(e.target.className),
       backend:this.state.backend.concat(e.target.className),
@@ -36,18 +58,8 @@ class Main extends React.Component {
       answer:this.state.backans.concat(e.target.className)
     })
     }
-    if(e.target.className=='-'){
-      if(this.state.operation[this.state.operation.length-1]=='-'){
-        this.setState({
-          operation:this.state.backend.slice(0,-1).concat(e.target.className),
-          backend:this.state.backend.slice(0,-1).concat(e.target.className),          
-          mid:this.state.mid.slice(0,-1).concat(e.target.className),
-          backans:e.target.className,
-          answer:e.target.className
-      })
-      }
-      count=0;
     }
+    
   }
   op(e){
       if(this.state.operation[this.state.operation.length-1]=='+'|| this.state.operation[this.state.operation.length-1]=='*'||this.state.operation[this.state.operation.length-1]=='/'){
@@ -159,7 +171,8 @@ class Main extends React.Component {
     this.setState({
       operation: this.state.operation.slice(0,-1),
       backend: this.state.backend.slice(0,-1),
-      mid:this.state.operation.slice(0,-1)
+      mid:this.state.backend.slice(0,-1),
+      backans:this.state.backans.slice(0,-1)
     })
   }
   render() {
