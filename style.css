@@ -1,0 +1,111 @@
+body{
+    background-color: #BDBDBD;
+}
+.body{
+    width:30vw;
+    height:75vh;
+    border:3px solid black;
+    margin:auto;
+    margin-top:20vh;
+    margin-bottom:20vh;
+}
+.calc{
+    width:100%;
+    height:25%;
+    background-color:black;
+}
+.operation,.answer{
+    color:white;
+    height:auto;
+    font-family: 'Quantico', sans-serif;
+    display:flex;
+    font-size:20px;
+    justify-content: flex-end;
+    padding:7.5px 7.5px 0px 0px;
+}
+.answer{
+    font-size: 25px;
+    padding-bottom: 7.5px;
+    font-family: 'Quantico', sans-serif;
+}
+.keypads{
+    display:grid;
+    grid-template-columns: repeat(4,25%) ;
+    grid-template-rows: repeat(5,20%);
+    height:75%;
+    width:100%;                   
+}
+button{
+    background-color:#616161;
+}
+.equalto{
+    grid-area: 4/4/6/5;
+    background-color:#0288D1;
+}
+.clear{
+    grid-area: 1/1/2/2;
+    background-color: teal;
+}
+.back{
+    grid-area: 1/2/2/3;
+    background-color: red;
+}
+#one{
+    grid-area: 4/1/5/2;
+}
+#two{
+    grid-area: 4/2/5/3;
+ 
+}
+#three{
+    grid-area: 4/3/5/4;
+ 
+}
+#four{
+    grid-area: 3/1/4/2;
+ 
+}
+#five{
+    grid-area: 3/2/4/3;
+ 
+}
+#six{
+    grid-area: 3/3/4/4;
+ 
+}
+#seven{
+    grid-area: 2/1/3/2;
+ 
+}
+#eight{
+    grid-area:2/2/3/3;
+ 
+}
+#nine{
+    grid-area: 2/3/3/4;
+ 
+}
+#zero{
+    grid-area: 5/1/6/3;
+ 
+}
+#decimal{
+    grid-area: 5/3/6/4;
+ 
+}
+#add{
+    grid-area: 3/4/4/5;
+ 
+}
+#subtract{
+    grid-area: 2/4/3/5;
+ 
+}
+#multiply{
+    grid-area: 1/4/2/5;
+ 
+}
+#divide{
+    grid-area: 1/3/2/4;
+ 
+}
